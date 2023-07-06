@@ -7,3 +7,4 @@ jobs:
     steps:
       - run: sudo apt install -y nodejs
       - run: npm install -g typescript
+      - run: tsc --version
