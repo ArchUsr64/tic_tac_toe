@@ -1,0 +1,9 @@
+name: learning_github_actions
+run-name: ${{ github.actor }} is learning Github Actions
+on: [push]
+jobs:
+  check-ts-version:
+    runs-on: ubuntu-latest
+  steps:
+    - run: sudo apt install nodejs
+    - run: npm install -g typescript
