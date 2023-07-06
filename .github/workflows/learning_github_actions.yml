@@ -4,6 +4,6 @@ on: [push]
 jobs:
   check-ts-version:
     runs-on: ubuntu-latest
-  steps:
-    - run: sudo apt search nodejs
-    - run: npm install -g typescript
+    steps:
+      - run: sudo apt install -y nodejs
+      - run: npm install -g typescript
