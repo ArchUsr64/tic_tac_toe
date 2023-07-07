@@ -6,9 +6,25 @@
 </head>
 
 <body>
-  <input type="text" id="input" placeholder="Enter some text"><br>
-  <button id="button">Submit</button><br>
-  <pre id="output"></pre>
+  <p>
+    Board:
+  </p>
+  <pre id="board">---<br>---<br>---</pre>
+  <label>Choose your move:&nbsp;&nbsp;</label>
+  <select id="dropdown">
+    <option label="1"></option>
+    <option label="2"></option>
+    <option label="3"></option>
+    <option label="4"></option>
+    <option label="5"></option>
+    <option label="6"></option>
+    <option label="7"></option>
+    <option label="8"></option>
+    <option label="9"></option>
+  </select>
+  <br>
+  <button id="button">Submit</button>
+  <pre id="turn_display"></pre>
   <script defer src="dest/index.js"></script>
 </body>
 
