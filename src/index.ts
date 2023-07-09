@@ -109,7 +109,7 @@ class Board{
     if (win(player_x_mask))
       return GameState.Win_X;
     if (win(player_o_mask))
-      return GameState.Win_X;
+      return GameState.Win_O;
     let empty_mask = this.grid.map((cell_value) => {
       if (cell_value === GridCell.Empty) return 1; 
       else return 0;
