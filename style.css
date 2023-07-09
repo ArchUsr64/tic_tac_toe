@@ -19,11 +19,7 @@
 }
 
 .grid_cell:hover {
-  background: #aaaaaa;
-}
-
-.grid_cell:click {
-  background: #aafaaa;
+  background: #eeeeee;
 }
 
 #grid {
