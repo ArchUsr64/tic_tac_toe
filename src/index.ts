@@ -1,6 +1,11 @@
 let grid= document.getElementById("grid") as HTMLSelectElement;
 let size_slider= document.getElementById("size_slider") as HTMLSelectElement;
 
+function set_size_display(size: number) {
+  let size_display= document.getElementById("size_display") as HTMLSelectElement;
+  size_display.innerText = `${size}X${size}`;
+}
+
 function generate_board(size: number): HTMLElement[] {
   let button_arr: HTMLElement[] = [];
   const get_class = (index: number): string[] => {
@@ -36,8 +41,10 @@ size_slider.addEventListener("input" ,() => {
   grid.innerHTML = ""
   grid.style.setProperty("--grid_size", size.toString())
   generate_board(size).forEach((element) => grid.appendChild(element));
+  set_size_display(size);
 })
 
 let size = parseInt(size_slider.value);
 grid.innerHTML = ""
 generate_board(size).forEach((element) => grid.appendChild(element));
+set_size_display(size);

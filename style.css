@@ -1,7 +1,3 @@
-:root {
-  --grid_size: 5;
-}
-
 .TopEdge {
   border-top: none;
 }
@@ -35,8 +31,8 @@
   grid-template-columns: repeat(var(--grid_size), 1fr);
   grid-template-rows: repeat(var(--grid_size), 1fr);
   grid-gap: 0px;
-  width: 80vh;
-  height: 80vh;
+  width: 40vw;
+  height: 40vw;
   margin: 0 auto;
 }
 
