@@ -3,42 +3,29 @@ let size_slider= document.getElementById("size_slider") as HTMLSelectElement;
 
 function generate_board(size: number): HTMLElement[] {
   let button_arr: HTMLElement[] = [];
-  const get_id = (index: number): string => {
-    switch (index) {
-      case 0:
-        return "TopLeft"
-      case size - 1:
-        return "TopRight"
-      case size * (size - 1):
-        return "BottomLeft"
-      case (size * size) - 1:
-        return "BottomRight"
-    }
+  const get_class = (index: number): string[] => {
+    let class_str: string[] = [];
     if (index < size) {
-      return "TopEdge"
+      class_str.push("TopEdge")
     }
     if (index % size == 0) {
-      return "LeftEdge"
+      class_str.push("LeftEdge")
     }
     if (index % size == size - 1) {
-      return "RightEdge"
+      class_str.push("RightEdge")
     }
-    if (index > (size * size) - 1) {
-      return "BottomEdge"
+    if (index >= size * (size - 1)) {
+      class_str.push("BottomEdge")
     }
-    return "Inner"
+    return class_str;
   }
   let range = Array.from({length: size * size}, (_, i) => i);
     grid.innerHTML = ""
     range.forEach((x) => {
     let grid_cell = document.createElement("button");
     grid_cell.classList.add("grid_cell");
-    grid_cell.innerText = "X";
-    grid_cell.id = get_id(x);
+    grid_cell.classList.add(...get_class(x));
     button_arr.push(grid_cell);
-    if (x % size === size - 1){
-      button_arr.push(document.createElement("br"));
-      }
     }
   )
   return button_arr;
@@ -47,6 +34,7 @@ function generate_board(size: number): HTMLElement[] {
 size_slider.addEventListener("input" ,() => {
   let size = parseInt(size_slider.value);
   grid.innerHTML = ""
+  grid.style.setProperty("--grid_size", size.toString())
   generate_board(size).forEach((element) => grid.appendChild(element));
 })
 

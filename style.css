@@ -1,0 +1,48 @@
+:root {
+  --grid_size: 5;
+}
+
+.TopEdge {
+  border-top: none;
+}
+
+.BottomEdge {
+  border-bottom: none;
+}
+
+.BottomEdge {
+  border-bottom: none;
+}
+
+.RightEdge {
+  border-right: none;
+}
+
+.LeftEdge {
+  border-left: none;
+}
+
+.grid_cell:hover {
+  background: #aaaaaa;
+}
+
+.grid_cell:click {
+  background: #aafaaa;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid_size), 1fr);
+  grid-template-rows: repeat(var(--grid_size), 1fr);
+  grid-gap: 0px;
+  width: 80vh;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+.grid_cell {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  font-size: 30px;
+}
