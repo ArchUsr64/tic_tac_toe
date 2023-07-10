@@ -126,7 +126,7 @@ class Board{
   }
 }
 
-let board = new Board(0);
+let board :Board;
 
 function generate_board(size: number): HTMLElement[] {
   let button_arr: HTMLElement[] = [];
